@@ -1,0 +1,235 @@
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-size-normal: 16px;
+    --font-size-large: 48px;
+    --color-primary: rgba(52, 84, 122, 1);
+    --color-secondary: rgba(114, 114, 114, 1);
+    --color-white: #fff;
+    --color-background: rgba(238, 239, 241, 1);
+    --color-dark: black;
+    --color-footer: rgba(52, 84, 122, 1);
+}
+
+* {
+    font-family: var(--font-family);
+    color: var(--color-dark);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    overflow-x: hidden; /* Прибирає горизонтальний скрол */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    overflow-x: auto; /* Додає можливість прокручувати меню по горизонталі */
+}
+
+.nav li {
+    margin: 0 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.main-title {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-medium);
+    margin-top: 20px;
+}
+
+.description {
+    margin: 10px auto;
+    color: var(--color-secondary);
+    max-width: 70%;
+    text-align: center;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: var(--font-size-normal);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.about_me {
+    margin: 20px auto;
+    text-align: center;
+    max-width: 90%;
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.numbers_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 5px;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.video {
+    text-align: center;
+    background-color: var(--color-background);
+    padding: 20px;
+    overflow: hidden; /* Запобігає виходу контенту */
+}
+
+.video_title {
+    margin-bottom: 15px;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.phvid {
+    width: 100%; /* Фото розтягується на ширину контейнера */
+    height: auto; /* Зберігає пропорції зображення */
+    display: block; /* Усуває зайві пробіли */
+    margin: 0 auto; /* Центрує зображення */
+}
+
+.footer {
+    background-color: var(--color-footer);
+    text-align: center;
+    color: var(--color-white);
+    padding: 20px;
+}
+
+.footer .ivan {
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+}
+
+.footer .end {
+    font-size: 14px;
+}
+
+/* Для екранів з шириною менше 480px */
+@media (max-width: 480px) {
+    body, html {
+        font-size: 14px; /* Зменшуємо розмір шрифтів для маленьких екранів */
+    }
+
+    .header {
+        padding: 15px; /* Менше відступів для хедера */
+    }
+
+    /* Адаптуємо меню */
+    .nav ul {
+        display: flex;
+        flex-direction: column; /* Розташовуємо елементи меню вертикально */
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav li {
+        margin: 5px 0; /* Зменшуємо відступи між елементами меню */
+    }
+
+    /* Підвищуємо зручність для мобільних пристроїв */
+    .nav a {
+        padding: 5px 10px; /* Додаємо відступи для лінків в меню */
+    }
+
+    .main-title {
+        font-size: 24px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .description {
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .contact-button {
+        width: 100%; /* Кнопка на весь екран */
+        padding: 15px 0; /* Збільшення висоти кнопки */
+    }
+
+    .numbers {
+        grid-template-columns: 1fr; /* Всі елементи в одному стовпці */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .video_title {
+        font-size: 16px; /* Менший шрифт для відео-заголовка */
+    }
+
+    /* Стилізація меню для маленьких екранів */
+    .nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Поліпшуємо прокручування на мобільних */
+    }
+}
+
+/* Для екрану 360px */
+@media (max-width: 360px) {
+    .main-title {
+        font-size: 20px; /* Зменшення шрифту ще більше */
+    }
+
+    .description {
+        font-size: 10px; /* Зменшуємо шрифт для опису */
+    }
+
+    .nav ul {
+        flex-direction: column; /* Вертикальний розподіл елементів */
+    }
+
+    .contact-button {
+        font-size: 14px;
+    }
+}
+
